@@ -7,7 +7,7 @@ st.set_page_config(page_title="API-SQLITE", page_icon=":guardsman:", layout="wid
 
 crear_tabla()
 
-st.title("API-SQLITE-STREAMLITE / Meilyn Castillo 202310060207")
+st.title("API-SQLITE-STREAMLITE")
 st.write("Esta aplicación permite obtener datos de una API y almacenarlos en una base de datos SQLite, así como consultar y eliminar los datos almacenados.")
 
 menu=st.sidebar.selectbox (
@@ -44,7 +44,7 @@ elif menu=="Consumir API":
         else:
             st.error("No se pudieron obtener los usuarios de la API.")
 
-elif menu == "Ver base de datos":
+elif menu == "Ver la base de datos":
     st.header("Tabla almacenada en nuestro SQLite")
 
     df = consultar_usuarios()
@@ -59,7 +59,7 @@ elif menu == "Ver base de datos":
         col2.metric("Total ciudades", df["ciudad"].nunique())
         col3.metric("Total correos", df["email"].nunique())
 
-elif menu == "Buscar usuario":
+elif menu == "Buscar los usuarios":
     st.header("Buscar usuario en SQLite")
 
     df = consultar_usuarios()
@@ -81,7 +81,7 @@ elif menu == "Buscar usuario":
                 st.success("Resultado encontrado.")
                 st.dataframe(resultado, use_container_width=True)
 
-elif menu == "Eliminar datos":
+elif menu == "Eliminar los datos":
     st.header("Eliminar registros de SQLite")
 
     st.warning("Esta acción eliminará todos los datos almacenados.")
